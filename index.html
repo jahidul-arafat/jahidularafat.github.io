@@ -3,324 +3,1151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jahidul ARAFAT - PhD Candidate & DevSecOps Architect</title>
+    <title>Jahidul ARAFAT - PhD Candidate | DevSecOps, Cloud & CyberSec Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #336699; /* moderncv blue */
+            --text-color: #444;
+            --background-color: #fff;
+            --hint-width: 150px; /* Width for the left column (dates, labels) */
+            --content-padding: 20px;
+        }
 
-    <!-- Meta Tags for SEO -->
-    <meta name="description" content="Jahidul Arafat - PhD Candidate, Presidential Fellow, DevSecOps Architect, AI Team Lead with 10+ years experience in cloud architecture and cybersecurity">
-    <meta name="keywords" content="DevSecOps, Cloud Architecture, AI, ML, Kubernetes, AWS, Oracle Cloud, Cybersecurity, PhD Research">
-    <meta name="author" content="Jahidul Arafat">
+        body {
+            font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.3;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jahidul ARAFAT - Portfolio">
-    <meta property="og:description" content="Distinguished Software Engineer and NSF-funded PhD researcher specializing in DevSecOps, Cloud Architecture, and AI/ML">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jahidularafat.github.io">
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--content-padding) 60px var(--content-padding);
+        }
 
-    <!-- External Dependencies -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        /* --- Navigation Menu --- */
+        nav {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            padding: 0.5rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            margin-bottom: 1.5rem;
+        }
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 5px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--main-color);
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: #000;
+        }
+
+        /* --- Header --- */
+        .cv-header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--main-color);
+            margin-bottom: 20px;
+        }
+
+        .cv-header .name {
+            font-size: 24pt;
+            font-weight: 300;
+            color: var(--main-color);
+            margin: 0;
+        }
+
+        .cv-header .name .lastname {
+            font-weight: 700;
+        }
+
+        .cv-header .title {
+            font-size: 11pt;
+            font-weight: 400;
+            margin-top: 5px;
+            color: var(--text-color);
+        }
+
+        .cv-header .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 9pt;
+        }
+
+        .cv-header .contact-info span {
+            display: inline-block;
+        }
+
+        .cv-header .contact-info a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .cv-header .contact-info a:hover {
+            color: var(--main-color);
+        }
+
+        /* --- Sections --- */
+        section {
+            margin-bottom: 1em;
+        }
+
+        h2.section-title {
+            font-size: 12pt;
+            color: #000;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--text-color);
+            padding-bottom: 3px;
+            margin: 1em 0 0.5em 0;
+        }
+
+        /* --- CV Entry (for experience, education) --- */
+        .cventry {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 0.8em;
+        }
+
+        .cventry .entry-hint {
+            flex-basis: var(--hint-width);
+            flex-shrink: 0;
+            font-weight: 700;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .cventry .entry-content {
+            flex-grow: 1;
+        }
+
+        .cventry .entry-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+
+        .cventry .entry-details {
+            font-style: italic;
+            margin: 2px 0;
+        }
+
+        .cventry .entry-description {
+            margin-top: 5px;
+        }
+
+        .cventry .entry-description ul {
+            list-style-type: '— ';
+            padding-left: 15px;
+            margin: 0;
+        }
+        .cventry .entry-description ul li {
+            margin-bottom: 4px;
+        }
+
+        /* --- CV Item (for skills, etc.) --- */
+        .cvitem {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 0.3em;
+        }
+
+        .cvitem .item-label {
+            flex-basis: var(--hint-width);
+            flex-shrink: 0;
+            font-weight: 700;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .cvitem .item-content {
+            flex-grow: 1;
+        }
+
+        .cvitem.wide-label .item-label {
+            flex-basis: 220px; /* For Git Repositories Section */
+        }
+
+        a {
+            color: var(--main-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        .cv-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            padding: 5px 0;
+            font-size: 8pt;
+        }
+        .cv-footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--content-padding);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cventry {
+                flex-direction: column;
+            }
+            .cventry .entry-hint {
+                text-align: left;
+                padding-right: 0;
+                margin-bottom: 5px;
+            }
+            .cvitem {
+                flex-direction: column;
+            }
+            .cvitem .item-label {
+                text-align: left;
+                padding-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Architecture Hover Modal Styles */
+        .architecture-item {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .architecture-item:hover {
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            padding: 5px;
+            margin: -5px;
+        }
+
+        .architecture-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 2px solid var(--main-color);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 10000;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 0;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .modal-header {
+            background: var(--main-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 18pt;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        .modal-section {
+            margin-bottom: 20px;
+        }
+
+        .modal-section h4 {
+            color: var(--main-color);
+            font-size: 14pt;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .modal-section p, .modal-section ul {
+            margin: 0 0 10px 0;
+        }
+
+        .modal-section ul {
+            padding-left: 20px;
+        }
+
+        .modal-section li {
+            margin-bottom: 5px;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px 5px 5px 0;
+            font-size: 10pt;
+        }
+
+        .github-link:hover {
+            background: #555;
+            color: white;
+        }
+
+        .api-link {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 5px 5px 5px 0;
+            font-size: 10pt;
+        }
+
+        .api-link:hover {
+            background: #218838;
+            color: white;
+        }
+
+        .architecture-diagram {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 10pt;
+            overflow-x: auto;
+        }
+
+        .problem-solution {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .tech-stack {
+            background: #e7f3ff;
+            border: 1px solid #b8daff;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .tech-stack .tech-item {
+            display: inline-block;
+            background: var(--main-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 15px;
+            margin: 2px;
+            font-size: 9pt;
+        }
+
+    </style>
 </head>
 <body>
-<!-- Header Section -->
-<header class="header" id="header">
-    <div class="container">
-        <div class="header-content">
-            <h1 class="header-title">Jahidul <span class="highlight">ARAFAT</span></h1>
-            <p class="subtitle">PhD Candidate, Presidential & Woltosz Graduate Research Fellow</p>
-            <p class="description">
-                DevSecOps & Cloud Architect | AI Team Lead | Former Oracle L3 Sr Solution Architect |
-                Former bKash L4 Principal System Analyst | CNCF Kubernetes Security Researcher
-            </p>
 
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Auburn University, USA</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+1 334.744.3544</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>jahidapon@gmail.com</span>
-                </div>
-            </div>
-
-            <div class="social-links">
-                <a href="https://linkedin.com/in/jahidul-arafat-791a7490" class="social-link" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/jahidul-arafat" class="social-link" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://gitlab.com/jza0145" class="social-link" target="_blank" aria-label="GitLab">
-                    <i class="fab fa-gitlab"></i>
-                </a>
-                <a href="https://conf.researchr.org/profile/ease-2025/jahidularafat" class="social-link" target="_blank" aria-label="Research Profile">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-            </div>
-
-            <a href="#" class="download-resume" id="downloadResume">
-                <i class="fas fa-download"></i>
-                Download Resume PDF
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- Navigation -->
-<nav class="nav" id="navigation">
-    <div class="container">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="#summary" class="nav-link">Summary</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#architecture" class="nav-link">Architecture</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#security-research" class="nav-link">Security Research</a></li>
-                <li><a href="#current-research" class="nav-link">Current Research</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#repositories" class="nav-link">Repositories</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-            </ul>
-        </div>
-    </div>
+<nav>
+    <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#architecture">Key Architecture</a></li>
+        <li><a href="#egovernment">E-Government</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#bugs">Bug Discoveries</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#oss">Open Source</a></li>
+        <li><a href="#certs">Certifications</a></li>
+    </ul>
 </nav>
 
-<!-- Main Content -->
-<main class="main">
-    <div class="container">
+<div class="container">
 
-        <!-- Professional Summary Section -->
-        <section class="section" id="summary">
-            <h2 class="section-title">
-                <i class="fas fa-user-tie"></i>
-                Professional Summary
-            </h2>
-            <div class="summary-text">
-                <p>Distinguished Software Engineer (DevSecOps) and NSF-funded PhD researcher with 10+ years developing secure, scalable distributed systems. Presidential and Woltosz Graduate Research Fellow leading CNCF-compliant Kubernetes operator security research.</p>
+    <header class="cv-header">
+        <h1 class="name"><span class="firstname">Jahidul</span> <span class="lastname">ARAFAT</span></h1>
+        <p class="title">
+            PhD Candidate, Presidential & Woltosz Graduate Research Fellow | <br>
+            DevSecOps, Cloud & CyberSec Architect | AI Team Lead, OrangeBD | Former L3 Sr Solution & Cloud Architect, Oracle | <br>
+            Former L4 Principal System Analyst bKash (Unicorn, Alipay) | <br>
+            <a href="https://conf.researchr.org/profile/ease-2025/jahidularafat" target="_blank">Program Committee Member, EASE 2025</a> (International Conference on Evaluation and Assessment in Software Engineering)
+        </p>
+        <div class="contact-info">
+            <span><a href="https://www.google.com/maps/search/?api=1&query=Auburn+University" target="_blank">Auburn University, USA</a></span>
+            <span><a href="tel:+13347443544">+1 334.744.3544</a></span>
+            <span><a href="mailto:jahidapon@gmail.com">jahidapon@gmail.com</a></span>
+            <span><a href="https://linkedin.com/in/jahidul-arafat-791a7490" target="_blank">linkedin.com/in/jahidul-arafat-791a7490</a></span>
+            <span><a href="https://github.com/jahidul-arafat" target="_blank">github.com/jahidul-arafat</a></span>
+            <span><a href="https://gitlab.com/jza0145" target="_blank">gitlab.com/jza0145</a></span>
+        </div>
+    </header>
 
-                <p>Expert in TypeScript, Rust, Java, AWS, OCI, AI/ML with proven technical leadership at Oracle, bKash (Alipay), HWW handling 10M+ concurrent users. Specializes in GenAI/RAG architectures, federated ML, and LLM deployment on HuggingFace infrastructure.</p>
+    <main>
+        <section id="summary">
+            <h2 class="section-title">Professional Summary</h2>
+            <p style="margin: 0;">
+                Distinguished Software Engineer (DevSecOps) and NSF-funded PhD researcher with 10+ years developing secure, scalable distributed systems. Presidential and Woltosz Graduate Research Fellow leading CNCF-compliant Kubernetes operator security research. Expert in TypeScript, Rust, Java, AWS, OCI, AI/ML with proven technical leadership at Oracle, bKash (Alipay), HWW handling 10M+ concurrent users. Specializes in GenAI/RAG architectures, federated ML, and LLM deployment on HuggingFace infrastructure. World's 2nd highest AWS Solutions Architect scorer (97%) with 35+ certifications including AWS, Oracle Cloud (93.3%), ISC2, EC-Council CEH, CompTIA+, RedHat RHCSA, and PCI-DSS. Maintains 20+ top-ranked GitHub repositories (500+ stars) contributing to CNCF ecosystem with production-ready tools on PyPI/TestPyPI. Created enterprise solutions: operatorhub-scraper, ottpredictor, log4j vulnerability simulators, and GenAI frameworks. Conducted 100+ technical workshops globally. Discovered critical bugs leading to Oracle career opportunities: Cloud Console vulnerability (2021) and MySQL PaaS design flaws (2022). Designed enterprise architectures: X-Road compliant e-government platforms, PCI-DSS payment systems (600K/min transactions), fault-tolerant OTT platforms (10M+ users), and CloudNative modernization for Fortune 500s. Top 4% global cybersecurity ranking (TryHackMe), HackerRank Python score 2296.4/2300.
+            </p>
+        </section>
 
-                <p>World's 2nd highest AWS Solutions Architect scorer (97%) with 35+ certifications including AWS, Oracle Cloud (93.3%), ISC2, EC-Council CEH, CompTIA+, RedHat RHCSA, and PCI-DSS. Maintains 20+ top-ranked GitHub repositories (500+ stars) contributing to CNCF ecosystem with production-ready tools on PyPI/TestPyPI.</p>
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="cvitem"><div class="item-label">Languages</div><div class="item-content">TypeScript, Rust, Java, Python, Go, Haskell, JavaScript, Structured Query Language (SQL), Kusto Query Language (KQL), Bash, F*, Coq, OCaml</div></div>
+            <div class="cvitem"><div class="item-label">AI/ML & Research</div><div class="item-content">PyTorch, TensorFlow, Generative Adversarial Networks (GANs), Retrieval Augmented Generation (RAG), Large Language Model (LLM) Training, Computer Vision, Time Series Analysis, Federated Machine Learning (ML), HuggingFace Transformers, Transformers Library, LangChain, LlamaIndex, Model Context Protocol (MCP) Servers, LM Studio, Google Vertex AI, Ollama, Anthropic Claude API, OpenAI API, Scikit-learn, XGBoost, LightGBM, MLflow, Weights & Biases (W&B), SMT Solvers</div></div>
+            <div class="cvitem"><div class="item-label">Databases & Storage</div><div class="item-content">Oracle Database, Oracle Autonomous Database, DynamoDB, PostgreSQL, MySQL, Cassandra, CockroachDB, Redis Cluster, Vector Databases (Weaviate, LanceDB, Pinecone, Chroma), MongoDB, Neo4j Graph Database, Elasticsearch, InfluxDB, ScyllaDB, Amazon RDS Aurora, Oracle Exadata, Azure Data Explorer (Kusto), Azure Log Analytics</div></div>
+            <div class="cvitem"><div class="item-label">Cloud/DevOps</div><div class="item-content">Amazon Web Services (AWS), Oracle Cloud Infrastructure (OCI), Azure DevSecOps, Kubernetes, Docker, Terraform, Ansible, Apache Kafka, Jenkins, GitLab CI/CD, GitHub Actions, Travis CI, Circle CI, EKS, AWS Batch HPC, EMR Spark, Fargate Serverless, ArgoCD GitOps, K8sGPT</div></div>
+            <div class="cvitem"><div class="item-label">Security & Analysis</div><div class="item-content">Payment Card Industry Data Security Standard (PCI-DSS), Static Application Security Testing/Dynamic Application Security Testing (SAST/DAST), SonarQube Quality Gates, SAST/DAST Template Design, Dependency Vulnerability Scanning, Vulnerability Assessment, Supply Chain Security, Software Bill of Materials (SBOM), Kyverno Policy-as-Code, OPA Rego, Bandit Security Analysis, Forensic Analysis, Zero-Trust Architecture</div></div>
+            <div class="cvitem"><div class="item-label">Formal Methods</div><div class="item-content">F* Functional Programming, Coq Proof Assistant, Satisfiability Modulo Theories (SMT) Solvers, Java Abstract Syntax Tree (AST) Parsing, Dependency Graph Analysis, Theorem Proving, NP-Complete Algorithm Design, Formal Verification Models</div></div>
+            <div class="cvitem"><div class="item-label">Full Stack & Arch.</div><div class="item-content">Next.js, React.js, Express.js, Node.js, Vercel, Jest, Puppeteer, Middleware Design, Async/Non-blocking I/O, Database Design, API Architecture, Microservices, Event-driven Systems, GraphQL, REST APIs, ORDS RESTful APIs</div></div>
+            <div class="cvitem"><div class="item-label">Dev Frameworks</div><div class="item-content">NPM/Yarn, Next.js, Java Helidon, Java Spring Boot, Java Micronaut, Maven, Gradle, AWS DevSecOps SDKs, Oracle Data Science SDKs, Oracle DevSecOps SDKs, Quarkus, Vert.x, Fastify, Vite, Webpack, ESBuild, TypeScript Compiler API, JUnit 5, Testcontainers</div></div>
+            <div class="cvitem"><div class="item-label">Python Dev</div><div class="item-content">FastAPI, Django, Flask, Gunicorn, Uvicorn, Celery, Pydantic, Poetry, Pipenv, PyTest, Black, Flake8, mypy, Streamlit, Gradio, Jupyter Notebooks, IPython, Anaconda, Conda, Matplotlib, Seaborn, Plotly, Bokeh, Pandas, NumPy, SciPy</div></div>
+            <div class="cvitem"><div class="item-label">Data & Visualization</div><div class="item-content">Algorithm Visualization, Technical Debt Detection, Code Quality Metrics, Team Dynamics Analysis, Interactive Learning Platforms, Real-time Metrics, Performance Analysis, Apache Spark, Data Pipeline Orchestration</div></div>
+            <div class="cvitem"><div class="item-label">Infrastructure & Simulation</div><div class="item-content">Multi-Cloud Hybrid Architectures, Edge Federated Learning, Container Orchestration, Kubernetes Operators, Minecraft Server Architecture, Gaming Platform Design, OTT Platform Scaling, Live Streaming Infrastructure, Content Delivery Networks (CDN), Load Balancing</div></div>
+            <div class="cvitem"><div class="item-label">Serverless & Operator</div><div class="item-content">AWS Lambda, Azure Functions, Oracle Functions, Serverless Framework, AWS SAM, Terraform CDK, Kubernetes Operator SDK, Kubebuilder, KUDO, Helm Charts, Kustomize, Operator Lifecycle Manager (OLM), Custom Resource Definitions (CRDs), Controller Runtime</div></div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="cventry">
+                <div class="entry-hint">2024—Present</div>
+                <div class="entry-content">
+                    <p class="entry-title">PhD Computer Science & Software Engineering</p>
+                    <p class="entry-details">Auburn University | USA | CGPA: 3.89/4.00 (Continue)</p>
+                    <div class="entry-description">NSF Presidential Graduate Research Fellow - Kubernetes Operator Security</div>
+                </div>
+            </div>
+            <div class="cventry">
+                <div class="entry-hint">2022—2024</div>
+                <div class="entry-content">
+                    <p class="entry-title">Masters Information System Security</p>
+                    <p class="entry-details">Bangladesh University of Professionals | BD | CGPA: 3.83/4.00</p>
+                    <div class="entry-description">ML/LLM for Anomaly Detection</div>
+                </div>
+            </div>
+            <div class="cventry">
+                <div class="entry-hint">2008—2011</div>
+                <div class="entry-content">
+                    <p class="entry-title">Masters of Science (TE) in CSIT</p>
+                    <p class="entry-details">Islamic University of Technology | BD | CGPA: 3.94/4.00</p>
+                    <div class="entry-description">Major: CyberSecurity</div>
+                </div>
+            </div>
+            <div class="cventry">
+                <div class="entry-hint">2004—2008</div>
+                <div class="entry-content">
+                    <p class="entry-title">Bachelor Computer Science & Engineering</p>
+                    <p class="entry-details">Dhaka University | BD | CGPA: 3.88/4.00 (last 80 credits)</p>
+                </div>
             </div>
         </section>
 
-        <!-- Professional Experience Section -->
-        <section class="section" id="experience">
-            <h2 class="section-title">
-                <i class="fas fa-briefcase"></i>
-                Professional Experience
-            </h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="job-title">Chief Technology Advisor & AI Team Lead</div>
-                    <div class="company">Orange Business Development Ltd.</div>
-                    <div class="duration">Jul 2025 - Jan 2026 | Contract/Hybrid</div>
-                    <ul class="job-highlights">
-                        <li>Leading architectural transformation of national digital platforms using cloud-native, AI-first, and secure-by-design strategies</li>
-                        <li>Spearheading RAG enhanced GenAI solutions across government platforms</li>
-                        <li>Re-architecting legacy systems into Kubernetes-native microservice ecosystems</li>
-                        <li>Implementing SBOM, A-MAP, and zero-trust principles for software supply chain security</li>
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="cventry">
+                <div class="entry-hint">Jul 2025—Jan 2026</div>
+                <div class="entry-content">
+                    <p class="entry-title">Chief Technology Advisor & AI Team Lead</p>
+                    <p class="entry-details">Orange Business Development Ltd. | Contract/Hybrid</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Leading architectural transformation of national digital platforms using cloud-native, AI-first, and secure-by-design strategies for clients across North America and Australia</li>
+                            <li>Spearheading Retrieval Augmented Generation (RAG) enhanced Generative AI (GenAI) solutions across government platforms, enabling intelligent search, contextual guidance, and autonomous service interaction</li>
+                            <li>Re-architecting legacy systems into Kubernetes-native microservice ecosystems with Infrastructure as Code (IaC), GitOps, and DevSecOps pipelines across Azure and multi-cloud environments</li>
+                            <li>Implementing Software Bill of Materials (SBOM), Artifacts-Metadata-Attestation-Policies (A-MAP), and zero-trust principles for software supply chain security</li>
+                            <li>Deploying federated Machine Learning (ML) models and Large Language Model (LLM) solutions on HuggingFace infrastructure for scalable AI service delivery</li>
+                            <li>Designing Model Context Protocol (MCP) agentic servers for seamless Large Language Model (LLM) integration with enterprise systems and government databases</li>
+                            <li>Mentoring teams on secure cloud engineering, Generative AI (GenAI) code tooling, Retrieval Augmented Generation (RAG) pipelines, AI observability frameworks, and Azure DevSecOps best practices</li>
+                            <li>Architecting high-performance game server infrastructures and simulation environments for training AI agents with Model Context Protocol (MCP) based intelligent automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Aug 2024—Present</div>
+                <div class="entry-content">
+                    <p class="entry-title">Presidential & Woltosz Graduate Research Fellow</p>
+                    <p class="entry-details">Auburn University | USA</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Leading National Science Foundation (NSF) funded Cloud Native Computing Foundation (CNCF) compliant security frameworks for Kubernetes operators</li>
+                            <li>Teaching graduate Software Quality Assurance, mentoring students in Large Language Model (LLM) applications and federated learning architectures</li>
+                            <li>Developing formal verification models using F* and Coq for Kubernetes operator dependency resolution algorithms</li>
+                            <li>Conducting research on software supply chain security, vulnerability detection, and distributed Machine Learning (ML) model deployment strategies</li>
+                            <li>Implementing federated learning pipelines for privacy-preserving AI model training across distributed edge environments</li>
+                            <li>Designing Model Context Protocol (MCP) agentic frameworks for secure Large Language Model (LLM) interactions in distributed research environments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Mar 2022—Jul 2024</div>
+                <div class="entry-content">
+                    <p class="entry-title">Senior Technology Solution & Cloud Architect (L3/IC3)</p>
+                    <p class="entry-details">Oracle SAGE ASEAN | Singapore</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Architected fault-tolerant Live Streaming OTT Platform using Kubernetes with Ampere instances, supporting 10M+ concurrent users with 99.9% uptime for South Asian Cricket Board</li>
+                            <li>Designed enterprise-scale microservices migration strategy for world's largest NGO (50+ countries) from AWS to OCI, implementing blue-green deployment with zero downtime</li>
+                            <li>Built CloudNative modernization framework for National Portal (30,000 websites) integrating JSON Duality Views, ORDS RESTful APIs, and Oracle Autonomous Database with X-Road-inspired interoperability</li>
+                            <li>Implemented e-Government architecture following Estonia's X-Road model: secure data exchange layer, federated identity management, and API gateway for seamless citizen services integration</li>
+                            <li>Developed Oracle Serverless Functions with Go and Python for real-time event processing, integrating with Apache Kafka for distributed streaming architectures</li>
+                            <li>Created comprehensive Infrastructure as Code (IaC) solutions using OCI Terraform SDK, automating deployment pipelines with 95% reduction in manual intervention</li>
+                            <li>Designed national digital identity registry system with NID, birth/death certificates, driving licenses integration using blockchain-based verification and smart contracts</li>
+                            <li>Built advanced monitoring and observability stack using Prometheus, Grafana, and OCI Cloud Guard for proactive threat detection and performance optimization</li>
+                            <li>Deployed ML models on HuggingFace infrastructure for government AI services, implementing federated learning for privacy-preserving citizen data analytics</li>
+                            <li>Architected high-performance Minecraft server clusters for educational simulation environments and multi-player collaborative platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Jun 2021—Mar 2022</div>
+                <div class="entry-content">
+                    <p class="entry-title">Principal System Analyst (L4)</p>
+                    <p class="entry-details">bKash (co-owned by Alipay) | BD</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Led R&D resolving "Transaction State" throttling for 600K/min transaction capacity</li>
+                            <li>Modernized architecture combating CVE-2021-44228 (log4j) with RUST solutions</li>
+                            <li>Designed PCI-DSS compliant AWS deployment for VISA/MasterCard/AMEX payment systems</li>
+                            <li>Implemented optimal memory management with atomic transaction state handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Aug 2019—May 2021</div>
+                <div class="entry-content">
+                    <p class="entry-title">Lead DevOps Engineer & CloudNative Developer</p>
+                    <p class="entry-details">HWW BD/USA | BD</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Resolved caching latency in Magento eCommerce (10M products, 1000+ TPS)</li>
+                            <li>Implemented microservices with Kubernetes, ISTIO service mesh, ArgoCD GitOps across Azure and AWS multi-cloud environments</li>
+                            <li>Designed multi-region architecture for European GDPR compliance automation with Azure DevSecOps pipeline integration</li>
+                            <li>Created intelligent Redis Sentinel caching with master-slave architecture and deployed custom Minecraft server infrastructure for client gaming platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Feb 2015—Mar 2020</div>
+                <div class="entry-content">
+                    <p class="entry-title">Assistant Professor</p>
+                    <p class="entry-details">Bangladesh Army Int. University | BD</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Taught Software Engineering, Machine Learning, Cybersecurity to 500+ students</li>
+                            <li>Supervised 15+ thesis projects on microservices, cloud security, distributed systems</li>
+                            <li>Developed curriculum for Software Quality Assurance and Network Security courses</li>
+                            <li>Mentored students in ACM-ICPC contests and research publications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Jan 2014—Jan 2015</div>
+                <div class="entry-content">
+                    <p class="entry-title">Lecturer</p>
+                    <p class="entry-details">Military Institute of Science & Technology (MIST) | BD</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Taught graduate courses in Algorithms, Compiler Design, Operating Systems, Computer Networks</li>
+                            <li>Supervised 6+ thesis projects in machine learning and cybersecurity domains</li>
+                            <li>Developed hands-on labs for Computer Graphics and Security courses</li>
+                            <li>Mentored students in competitive programming and research methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Mar 2011—Jan 2014</div>
+                <div class="entry-content">
+                    <p class="entry-title">Software Engineer (Senior Researcher)</p>
+                    <p class="entry-details">HTRC BD & HTRC UK | BD</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Developed financial data analysis and prediction models using ML algorithms (KNN, K-means, Regression)</li>
+                            <li>Implemented Java-based software solutions using modular programming and Spring Boot frameworks</li>
+                            <li>Created REST APIs and integrated Elastic stack with in-memory caching for cloud solutions</li>
+                            <li>Served NASDAQ, S&P, Dow Jones customers with algorithmic trading insights</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="architecture">
+            <h2 class="section-title">Key Architecture Designed</h2>
+
+            <div class="cvitem architecture-item" onclick="openModal('ai-agent-modal')">
+                <div class="item-label">AI Agent Orchestration</div>
+                <div class="item-content">Enhanced AutoGen RAG System: Dynamic agent creation with 5 collaboration patterns (sequential, parallel, hierarchical, consensus, specialist_review), dual database integration (PostgreSQL + MySQL), hardware acceleration (GPU/MPS/CPU), multi-level caching with Redis</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('ai-upselling-modal')">
+                <div class="item-label">AI-Powered Upselling</div>
+                <div class="item-content">Complete suite from CLI to enterprise web application: 5 hybrid ML algorithms (FP-Growth, Matrix Factorization, Neural CF, PageRank Networks), real-time processing (<50ms), A/B testing framework, analytics dashboard, REST API with BI metrics</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('ai-assistant-modal')">
+                <div class="item-label">Real-time AI Assistant</div>
+                <div class="item-content">Enhanced AI Podcast Assistant: real-time transcription via OpenAI Whisper, speaker diarization with Pyannote (8 speakers), contextual question generation, fact-checking with Wikipedia, Slack integration, Apple Silicon M3 MPS optimization</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('genai-infra-modal')">
+                <div class="item-label">GenAI Infrastructure</div>
+                <div class="item-content">8-template LLM deployment playground: SageMaker pipelines, EKS Kubernetes, AWS Batch HPC, EMR Spark, Fargate Serverless, ParallelCluster, Hybrid Multi-Cloud, Edge Federated Learning with real-time metrics and cost breakdowns</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('payment-systems-modal')">
+                <div class="item-label">Payment Systems</div>
+                <div class="item-content">PCI-DSS compliant payment gateway for bKash: VISA/MasterCard/AMEX integration, multi-phase transaction validation, secure data flow with wallet platform</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('cloud-infra-modal')">
+                <div class="item-label">Cloud Infrastructure</div>
+                <div class="item-content">Multi-region fault-tolerant OCI architecture: Kubernetes clusters, cache eviction policies, horizontal pod autoscaling, MySQL HA cluster with observability stack</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('live-streaming-modal')">
+                <div class="item-label">Live Streaming Infrastructure</div>
+                <div class="item-content">High-concurrency OTT platform: Kubernetes with Ampere instances, CDN integration, real-time analytics with Apache Kafka streaming for 10M+ users</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('enterprise-solutions-modal')">
+                <div class="item-label">Enterprise Solutions</div>
+                <div class="item-content">CloudNative modernization framework for National Portal (30,000 websites): JSON Duality Views, ORDS RESTful APIs, Oracle Autonomous Database, serverless functions, blockchain identity verification, IaC deployment with X-Road interoperability</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('digital-banking-modal')">
+                <div class="item-label">Digital Banking/MFS</div>
+                <div class="item-content">Secure Digital Banking/MFS Cloud Native Model for bKash: studying Monzo, NuBank, Revolut, Chime, Ally Bank, Starling Bank, N26 architectures to develop distributed architecture with enhanced security and scalability</div>
+            </div>
+
+            <div class="cvitem architecture-item" onclick="openModal('egovernment-modal')">
+                <div class="item-label">E-Government</div>
+                <div class="item-content">X-Road compliant digital government architecture: citizen portal, information mediator, federated identity registry, blockchain document verification, departmental solutions (Estonia model) for national-scale transformation</div>
+            </div>
+        </section>
+
+        <!-- Modal Overlay -->
+        <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+
+        <!-- AI Agent Orchestration Modal -->
+        <div class="architecture-modal" id="ai-agent-modal">
+            <div class="modal-header">
+                <h3>AI Agent Orchestration - Enhanced AutoGen RAG System</h3>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-section">
+                    <h4>🎯 Problem Solved</h4>
+                    <div class="problem-solution">
+                        <p><strong>Challenge:</strong> Traditional RAG systems lack dynamic agent collaboration and multi-modal data processing capabilities for complex enterprise scenarios.</p>
+                        <p><strong>Solution:</strong> Implemented intelligent agent orchestration with 5 collaboration patterns, dual database support, and hardware-optimized processing for enterprise-scale RAG applications.</p>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>🏗️ Core Components & Tech Stack</h4>
+                    <div class="tech-stack">
+                        <span class="tech-item">AutoGen Framework</span>
+                        <span class="tech-item">LangChain</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">MySQL</span>
+                        <span class="tech-item">Redis Cache</span>
+                        <span class="tech-item">OpenAI GPT-4</span>
+                        <span class="tech-item">Anthropic Claude</span>
+                        <span class="tech-item">HuggingFace Transformers</span>
+                        <span class="tech-item">FastAPI</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">CUDA/MPS</span>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>📊 High-Level Architecture Diagram</h4>
+                    <div class="architecture-diagram">
+                        ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+                        │   User Interface│    │  Agent Manager  │    │ Knowledge Store │
+                        │   (Web/API)     │◄──►│   Orchestrator  │◄──►│  (Vector DBs)   │
+                        └─────────────────┘    └─────────────────┘    └─────────────────┘
+                        │                       │                       │
+                        ▼                       ▼                       ▼
+                        ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+                        │ Collaboration   │    │   Agent Pool    │    │  Data Sources   │
+                        │   Patterns      │    │ (5 Strategies)  │    │ (PostgreSQL/    │
+                        │                 │    │                 │    │  MySQL/Redis)   │
+                        └─────────────────┘    └─────────────────┘    └─────────────────┘
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>⚙️ SOA Architecture & Data Flow</h4>
+                    <div class="architecture-diagram">
+                        Service Layer:
+                        ├── Agent Orchestration Service (Port: 8001)
+                        ├── Knowledge Management Service (Port: 8002)
+                        ├── Collaboration Engine Service (Port: 8003)
+                        ├── Cache Management Service (Port: 8004)
+                        └── Analytics & Monitoring Service (Port: 8005)
+
+                        Data Flow:
+                        1. User Query → Agent Manager
+                        2. Agent Manager → Strategy Selection (Sequential/Parallel/Hierarchical)
+                        3. Knowledge Retrieval → Vector DB + SQL Databases
+                        4. Agent Collaboration → Response Generation
+                        5. Response Validation → User Delivery
+                        6. Performance Metrics → Analytics Service
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>🔗 GitHub Repository & API Documentation</h4>
+                    <a href="https://gitlab.com/jza0145/autogen_multiagent_hybrid_datasource" target="_blank" class="github-link">📁 GitLab Repository</a>
+                    <a href="#" class="api-link">📖 OpenAPI Docs</a>
+                    <a href="#" class="api-link">🔧 Swagger UI</a>
+                </div>
+
+                <div class="modal-section">
+                    <h4>🌐 OpenAPI Integration Opportunities</h4>
+                    <ul>
+                        <li><strong>Enterprise CRM Integration:</strong> Salesforce, HubSpot API connections</li>
+                        <li><strong>Business Intelligence:</strong> Tableau, Power BI data connectors</li>
+                        <li><strong>Knowledge Management:</strong> Confluence, SharePoint integration</li>
+                        <li><strong>Communication Platforms:</strong> Slack, Microsoft Teams webhooks</li>
+                        <li><strong>Cloud Services:</strong> AWS Bedrock, Azure OpenAI Service APIs</li>
                     </ul>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="job-title">Presidential & Woltosz Graduate Research Fellow</div>
-                    <div class="company">Auburn University</div>
-                    <div class="duration">Aug 2024 - Present | USA</div>
-                    <ul class="job-highlights">
-                        <li>Leading NSF funded CNCF compliant security frameworks for Kubernetes operators</li>
-                        <li>Teaching graduate Software Quality Assurance</li>
-                        <li>Developing formal verification models using F* and Coq</li>
-                        <li>Conducting research on software supply chain security and federated ML</li>
-                    </ul>
+                <div class="modal-section">
+                    <h4>🔧 Low-Level Design (LLD)</h4>
+                    <div class="architecture-diagram">
+                        Class Hierarchy:
+                        ├── AgentOrchestrator
+                        │   ├── SequentialAgent
+                        │   ├── ParallelAgent
+                        │   ├── HierarchicalAgent
+                        │   ├── ConsensusAgent
+                        │   └── SpecialistReviewAgent
+                        ├── DatabaseManager
+                        │   ├── PostgreSQLConnector
+                        │   ├── MySQLConnector
+                        │   └── RedisConnector
+                        ├── KnowledgeRetriever
+                        │   ├── VectorSearchEngine
+                        │   ├── SemanticSearcher
+                        │   └── HybridRetriever
+                        └── ResponseGenerator
+                        ├── ContextAggregator
+                        ├── AnswerSynthesizer
+                        └── QualityValidator
+
+                        Hardware Optimization:
+                        - GPU Acceleration: CUDA/ROCm support
+                        - Apple Silicon: MPS optimization
+                        - CPU Fallback: Multi-threading with asyncio
+                        - Memory Management: Dynamic batching
+                    </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="job-title">Senior Technology Solution & Cloud Architect (L3/IC3)</div>
-                    <div class="company">Oracle SAGE ASEAN</div>
-                    <div class="duration">Mar 2022 - Jul 2024 | Singapore</div>
-                    <ul class="job-highlights">
-                        <li>Architected fault-tolerant Live Streaming OTT Platform supporting 10M+ concurrent users</li>
-                        <li>Designed enterprise-scale microservices migration for world's largest NGO (50+ countries)</li>
-                        <li>Built CloudNative modernization framework for National Portal (30,000 websites)</li>
-                        <li>Implemented e-Government architecture following Estonia's X-Road model</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="job-title">Principal System Analyst (L4)</div>
-                    <div class="company">bKash (co-owned by Alipay)</div>
-                    <div class="duration">Jun 2021 - Mar 2022 | Bangladesh</div>
-                    <ul class="job-highlights">
-                        <li>Led R&D resolving "Transaction State" throttling for 600K/min transaction capacity</li>
-                        <li>Modernized architecture combating CVE-2021-44228 (log4j) with RUST solutions</li>
-                        <li>Designed PCI-DSS compliant AWS deployment for VISA/MasterCard/AMEX payment systems</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Skills Section -->
-        <section class="section" id="skills">
-            <h2 class="section-title">
-                <i class="fas fa-code"></i>
-                Technical Skills
-            </h2>
-            <div class="skills-grid" id="skillsGrid">
-                <!-- Skills will be populated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Key Projects Section -->
-        <section class="section" id="projects">
-            <h2 class="section-title">
-                <i class="fas fa-project-diagram"></i>
-                Key Projects & Open Source Contributions
-            </h2>
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be populated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Key Architecture Section -->
-        <section class="section" id="architecture">
-            <h2 class="section-title">
-                <i class="fas fa-building"></i>
-                Key Architecture Designed
-            </h2>
-            <div class="architecture-grid" id="architectureGrid">
-                <!-- Architecture items will be populated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Bug Discoveries & Security Research Section -->
-        <section class="section" id="security-research">
-            <h2 class="section-title">
-                <i class="fas fa-bug"></i>
-                Notable Bug Discoveries & Security Research
-            </h2>
-            <div class="bug-discoveries" id="bugDiscoveries">
-                <!-- Bug discoveries will be populated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Current Research & Development Section -->
-        <section class="section" id="current-research">
-            <h2 class="section-title">
-                <i class="fas fa-flask"></i>
-                Current Research & Development (2024-Present)
-            </h2>
-            <div class="current-research-grid" id="currentResearchGrid">
-                <!-- Current research will be populated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section class="section" id="publications">
-            <h2 class="section-title">
-                <i class="fas fa-file-alt"></i>
-                Research Publications & Impact
-            </h2>
-            <div class="publications-content">
-                <div class="publications-summary">
-                    <p><strong>Research Impact:</strong> NSF-funded CNCF K8s operator security framework (TestPyPI: operatorhub-scraper), Enhanced DCGAN PyPI package deployed globally, 500+ GitHub stars across 20+ repositories, <a href="https://conf.researchr.org/profile/ease-2025/jahidularafat" target="_blank">Program Committee Member EASE 2025</a> (Emerging Results track), production-ready tools serving enterprise and research communities worldwide, 15+ peer-reviewed publications spanning computer vision, cybersecurity, social media analytics, and cloud-native systems.</p>
-                </div>
-                <div class="publications-list" id="publicationsList">
-                    <!-- Publications will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Top Repositories Section -->
-        <section class="section" id="repositories">
-            <h2 class="section-title">
-                <i class="fab fa-github"></i>
-                Top Git Repositories & Open Source Contributions
-            </h2>
-            <div class="repositories-grid" id="repositoriesGrid">
-                <!-- Repositories will be populated by JavaScript -->
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section class="section" id="education">
-            <h2 class="section-title">
-                <i class="fas fa-graduation-cap"></i>
-                Education
-            </h2>
-            <div class="education-list">
-                <div class="education-item">
-                    <div class="education-degree">PhD Computer Science & Software Engineering</div>
-                    <div class="education-school">Auburn University, USA</div>
-                    <div class="education-details">2024-Present | CGPA: 3.89/4.00 | NSF Presidential Graduate Research Fellow</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-degree">Masters Information System Security</div>
-                    <div class="education-school">Bangladesh University of Professionals</div>
-                    <div class="education-details">2022-2024 | CGPA: 3.83/4.00 | ML/LLM for Anomaly Detection</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-degree">Masters of Science (TE) in CSIT</div>
-                    <div class="education-school">Islamic University of Technology</div>
-                    <div class="education-details">2008-2011 | CGPA: 3.94/4.00 | Major: CyberSecurity</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-degree">Bachelor Computer Science & Engineering</div>
-                    <div class="education-school">Dhaka University</div>
-                    <div class="education-details">2004-2008 | CGPA: 3.88/4.00 (last 80 credits)</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section class="section" id="certifications">
-            <h2 class="section-title">
-                <i class="fas fa-certificate"></i>
-                Certifications & Recognition
-            </h2>
-            <div class="certifications-grid" id="certificationsGrid">
-                <!-- Certifications will be populated by JavaScript -->
-            </div>
-        </section>
-
-    </div>
-</main>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-text">
-                <p>&copy; 2025 Jahidul Arafat. All rights reserved.</p>
-                <p>Last updated: <span id="lastUpdated"></span></p>
-            </div>
-            <div class="footer-links">
-                <a href="https://jahidularafat.github.io" class="footer-link">Portfolio</a>
-                <a href="mailto:jahidapon@gmail.com" class="footer-link">Contact</a>
-                <a href="#" class="footer-link" id="footerDownload">Download Resume</a>
             </div>
         </div>
+
+        <!-- Additional Modals would follow similar pattern for other architectures -->
+
+        <section id="egovernment">
+            <h2 class="section-title">E-Government & Digital Infrastructure Expertise</h2>
+            <div class="cvitem"><div class="item-label">Interoperability</div><div class="item-content">X-Road architecture implementation, federated identity management, secure data exchange protocols</div></div>
+            <div class="cvitem"><div class="item-label">Digital Identity</div><div class="item-content">National ID systems, blockchain verification, smart contracts, biometric authentication integration</div></div>
+            <div class="cvitem"><div class="item-label">Citizen Services</div><div class="item-content">One-stop digital portals, eKYC, payment gateways, workflow automation, multi-channel service delivery</div></div>
+            <div class="cvitem"><div class="item-label">Government Tech</div><div class="item-content">Policy management systems, regulatory compliance automation, cross-border data exchange, digital sovereignty</div></div>
+        </section>
+
+        <section id="research">
+            <h2 class="section-title">Current Research & Development (2024-Present)</h2>
+
+            <div class="cventry">
+                <div class="entry-hint">CNCF/NSF</div>
+                <div class="entry-content">
+                    <p class="entry-title">Kubernetes Operator Security Framework</p>
+                    <p class="entry-details">Auburn University | Lead Researcher & Developer</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Developed production Kubernetes (K8s) operator dependency analysis tool published on TestPyPI (operatorhub-scraper)</li>
+                            <li>Created enhanced visualization for dependency graphs with cycle detection and vulnerability propagation</li>
+                            <li>Investigating advanced dependency resolution algorithms for NP-complete challenges in operator security</li>
+                            <li>Conducting formal analysis of operator control plane architectures and dependency propagation patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Software Engineering</div>
+                <div class="entry-content">
+                    <p class="entry-title">Advanced Dependency Analysis & Formal Methods</p>
+                    <p class="entry-details">Personal Research | Principal Investigator</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Implemented F*/SMT solvers for NP-complete dependency resolution with automated security assessment in distributed systems</li>
+                            <li>Designed Java Abstract Syntax Tree (AST) dependency parser for software engineering research and circular dependency detection</li>
+                            <li>Created formal verification models using F* and Coq for microservice architecture reliability analysis</li>
+                            <li>Developed polynomial-time algorithms for software supply chain vulnerability propagation modeling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Conference</div>
+                <div class="entry-content">
+                    <p class="entry-title">Technical Research & Industry Impact</p>
+                    <p class="entry-details">Academic & Professional | Program Committee Member</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Selected as Program Committee member for EASE 2025 (International Conference on Evaluation and Assessment in Software Engineering) - Emerging Results track</li>
+                            <li>Conducted 100+ technical workshops globally on Kubernetes, ServerlessOps, and Cloud Security for Oracle, DevSecOps communities</li>
+                            <li>Published research on Kubernetes operator dependency vulnerability propagation (ICSE 2025 preparation)</li>
+                            <li>Created SkyDic App architecture showcasing Express.js, middleware design, and async file handling with production-ready scalability patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">AI/ML Research</div>
+                <div class="entry-content">
+                    <p class="entry-title">GenAI & Computer Vision Solutions</p>
+                    <p class="entry-details">Personal Research | Principal Investigator</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Developed Deep Convolutional Generative Adversarial Network (DCGAN) for Computer Vision with PyPI deployment</li>
+                            <li>Created Retrieval Augmented Generation (RAG) based agentic solutions: podcast buddy, AI-powered upselling systems</li>
+                            <li>Collaborated with Electric Power Research Institute (EPRI) USA on Distribution Grid Modeler AI assistance architectures</li>
+                            <li>Maintained log4j vulnerability simulator and algorithm visualizers (Bellman-Ford, Prim's Minimum Spanning Tree)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Production Tools</div>
+                <div class="entry-content">
+                    <p class="entry-title">Critical Infrastructure Security Research</p>
+                    <p class="entry-details">Independent Research | Security Researcher</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Conducted forensic analysis of major service outages: Claude AI (May 2025), Spotify Envoy filter misconfiguration, identifying cascading failure patterns and architectural vulnerabilities</li>
+                            <li>Developed GitHub Repository Analyzer with technical debt detection, code quality metrics, and team dynamics analysis - serving engineering managers and DevOps teams globally</li>
+                            <li>Created Universal Database Explorer with local AI inference (DeepSeek Coder V2 + LLaMA 3) for schema-aware SQL generation without API dependencies</li>
+                            <li>Built 8-template GenAI LLM deployment architecture playground: EKS Kubernetes, AWS Batch HPC, EMR Spark, Fargate Serverless, and Hybrid Multi-Cloud setups with real-time metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Algorithm Visualization</div>
+                <div class="entry-content">
+                    <p class="entry-title">Interactive Learning Platforms</p>
+                    <p class="entry-details">Open Source Contribution | Principal Developer</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Developed interactive algorithm simulators: Bellman-Ford shortest path, Prim's MST, Dijkstra visualization, and CPU scheduling algorithms with real-time step-by-step analysis</li>
+                            <li>Created advanced TypeScript debugging frameworks addressing runtime type safety vs compile-time guarantees in distributed systems</li>
+                            <li>Built enhanced Bandit vulnerability analysis extension for Python repositories with advanced reporting capabilities</li>
+                            <li>Designed IaC security automation with Kyverno policy-as-code, OPA Rego expressions, and GitOps integration for compliance validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Academic Review</div>
+                <div class="entry-content">
+                    <p class="entry-title">Kubernetes Security Architecture Analysis</p>
+                    <p class="entry-details">Independent Research | Technical Reviewer</p>
+                    <div class="entry-description">
+                        <ul>
+                            <li>Conducted comprehensive technical review of KubeKeeper (EuroS&P 2025) Kubernetes secrets management architecture, identifying critical scalability and production readiness limitations</li>
+                            <li>Identified catastrophic scalability bottleneck: BoltDB single-write database design creates massive performance degradation during high-scale deployments (scaling 1K to 1M pods), transforming minutes-long operations into hours-long processes</li>
+                            <li>Analyzed production-killing operational overhead: 3 webhook validations + deployment mutations increase pod startup time from 2-5s to 30-60s, making ultra-high-scale scenarios (Netflix surge traffic, IPL cricket finals 100X viewer spikes) operationally unfeasible</li>
+                            <li>Discovered fundamental Single Point of Failure (SPOF): BoltDB file-based key storage with no concurrent writing support, file-level locking allowing only one webhook pod access, and catastrophic key loss when nodes fail</li>
+                            <li>Highlighted missing critical security feature: complete absence of key rotation mechanisms in file-based storage system, creating permanent security vulnerability and operational dead-end scenarios</li>
+                            <li>Identified zero-trust implementation contradictions: architecture claims zero-trust while implementing single database dependency, no distributed trust verification, and lack of graceful degradation mechanisms</li>
+                            <li>Proposed production-ready architectural improvements: distributed key architecture with Key Management Service (KMS) integration, High Availability (HA) webhook load balancing, in-memory caching with pre-warming strategies, and shared persistent volume concepts</li>
+                            <li>Demonstrated enterprise-scale Kubernetes security expertise based on Oracle, bKash (600K/min transactions), and OTT platform production deployments requiring immediate 1000X scaling capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bugs">
+            <h2 class="section-title">Notable Bug Discoveries & Security Research</h2>
+
+            <div class="cventry">
+                <div class="entry-hint">Sep 2021</div>
+                <div class="entry-content">
+                    <p class="entry-title">Critical Oracle Cloud Console Vulnerability</p>
+                    <p class="entry-details">Oracle Compute Team | Security Researcher</p>
+                    <div class="entry-description">
+                        Discovered unexpected server shutdown vulnerability in OCI Compute instances without notification triggers. Critical impact: potential data loss and service disruption across enterprise workloads. Led to career opportunity as Sr. Solution Architect and system-wide security improvements in Oracle Cloud Console.
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">Jan 2022</div>
+                <div class="entry-content">
+                    <p class="entry-title">Oracle MySQL PaaS Design Flaw</p>
+                    <p class="entry-details">Oracle MySQL Team Singapore | Security Researcher</p>
+                    <div class="entry-description">
+                        Identified storage lock vulnerability in MySQL High Availability (HA) PaaS affecting Online Transaction Processing (OLTP) transactions under high concurrency. Proposed real-time autoscaling solution with intelligent load balancing adopted by Oracle MySQL cloud services, improving transaction throughput by 40%.
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">May 2025</div>
+                <div class="entry-content">
+                    <p class="entry-title">Claude AI Service Outage Analysis</p>
+                    <p class="entry-details">Independent Security Research | Forensic Analyst</p>
+                    <div class="entry-description">
+                        Conducted comprehensive forensic analysis of Claude AI global service outage, identifying cascading failure patterns in distributed AI infrastructure. Published detailed technical analysis highlighting architectural vulnerabilities in Large Language Model (LLM) serving systems and proposed resilience improvements.
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">2024-2025</div>
+                <div class="entry-content">
+                    <p class="entry-title">Spotify Envoy Filter Misconfiguration</p>
+                    <p class="entry-details">Independent Security Research | Infrastructure Analyst</p>
+                    <div class="entry-description">
+                        Analyzed Spotify's Envoy proxy filter misconfiguration leading to service degradation. Identified configuration drift patterns in microservices mesh architectures and developed automated detection mechanisms for similar infrastructure vulnerabilities.
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">2021-2024</div>
+                <div class="entry-content">
+                    <p class="entry-title">Log4j Vulnerability Research & Education</p>
+                    <p class="entry-details">Open Source Security Research | Lead Security Researcher</p>
+                    <div class="entry-description">
+                        Created comprehensive Log4j vulnerability simulator (CVE-2021-44228) for educational purposes. Developed multiple exploitation scenarios and mitigation strategies, serving cybersecurity education community with practical hands-on learning tools. Repository gained significant traction in security research community.
+                    </div>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="entry-hint">2022-Present</div>
+                <div class="entry-content">
+                    <p class="entry-title">Kubernetes Operator Supply Chain Security</p>
+                    <p class="entry-details">CNCF/NSF Funded Research | Principal Investigator</p>
+                    <div class="entry-description">
+                        Discovered critical dependency vulnerability propagation patterns in Kubernetes operator ecosystems. Developed automated security assessment framework (operatorhub-scraper) identifying previously unknown supply chain risks. Research findings contributing to CNCF security best practices and operator certification standards.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2 class="section-title">Research Publications & Impact</h2>
+            <div class="cvitem"><div class="item-label">2025 (In Preparation)</div><div class="item-content">Arafat, J.; et al. "Dependency Vulnerability Propagation in Kubernetes Operator Supply Chain: A CNCF-Compliant Security Framework" ICSE 2027 (In Preparation)</div></div>
+            <div class="cvitem"><div class="item-label">2025 (arXiv)</div><div class="item-content">Arafat, J.; et al. "Enhanced Deep Convolutional Generative Adversarial Network (GAN) for Computer Vision: A Community-Deployable PyPI Framework" arXiv 2027 (In Preparation)</div></div>
+            <div class="cvitem"><div class="item-label">2024</div><div class="item-content">Arafat, J.; Shazibul Islam Shamim, Hanyang Hu, Arpan Srivastava, Muhammad Ali Babar, Akond Rahman. "A Vision of Seamless Quality Assurance for Kubernetes-based Container Orchestration" ACM TOSEM - Transactions on Software Engineering and Methodology, 2024, 33.7 (accepted)</div></div>
+            <div class="cvitem"><div class="item-label">2019</div><div class="item-content">Arafat, J.; Chowdury, Md Abdul Malek; Bidhu, Mysha Nishat; Faruqui, Tazkia Binty. "A Unified Identity Management Service Structure Based on LDAP and Kerberos for Organization with .bd Domain" IOSR Journal of Computer Engineering, 2019, 21(2):59-70</div></div>
+            <div class="cvitem"><div class="item-label">2019</div><div class="item-content">Arafat, J.; Chowdury, Md Abdul Malek; Faruque, Tazkia Binty. "A Light Weight Cryptography (LWC) for Small Scale Data in IoT Devices" International Journal of Computer Applications, 182(49):29-35</div></div>
+            <div class="cvitem"><div class="item-label">2013</div><div class="item-content">Arafat, J.; Habib, M. A.; Hossain, R. "Analyzing public emotion and predicting stock market using social media" American Journal of Engineering Research, 2013, v2(9), p265-275</div></div>
+            <div class="cvitem"><div class="item-label">2013</div><div class="item-content">Arafat, J.; Halimu, C.; Habib, M. A.; Hossain, R. "Emotion detection and event prediction system" Global Journal of Computer Science and Technology Network, Web & Security, 2013, v13 p13</div></div>
+            <div class="cvitem"><div class="item-label">2013</div><div class="item-content">Arafat, J.; Habib, M. A. "Recapitulating the development initiatives of a robust information security safeguard: RITSB-the proposed solution" IOSR Journal of Computer Engineering, Volume 15, Issue 2, p30-34</div></div>
+            <div class="cvitem"><div class="item-label">2013</div><div class="item-content">Arafat, J.; Habib, M. A.; Clement, C. K. "Situated Cognition & Culture of Learning to Re-Conceptualize the Teaching-Learning Paradigm in the Field of Engineering and Technology in Bangladesh" IOSR Journal of Research & Method in Education, 2013, v3, p20-27</div></div>
+            <div class="cvitem"><div class="item-label">2012-2013</div><div class="item-content">Arafat, J.; Halimu, C. "Emergence of Robust Information Security Management Structure around the world wide Islamic Institutions: A Multifaceted Security Solution" International Journal of Strengthening the Role of ICT in Development, 2011, p393</div></div>
+            <div class="cvitem"><div class="item-label">2012</div><div class="item-content">Arafat, J.; Daiyan, G. M.; Waliullah, M. "Emergence of Robust Information Security Management Structure around the world wide Higher Education Institutions: a Multifaceted Security Solution" International Journal of Computer Science Issues (IJCSI), 9(4), 206</div></div>
+            <div class="cvitem"><div class="item-label">2012</div><div class="item-content">Waliullah, M.; Arafat, J.; Daiyan, G. M. "Information Technology Security, Strategies and Practices in Higher Education: A Literature Review" Journal of Computing Press, 2012, p138-144</div></div>
+            <div class="cvitem"><div class="item-label">2008-2009</div><div class="item-content">Faruquzzaman, A. B. M.; Paiker, N. R.; Arafat, J.; Karim, Z.; Ali, M. A. "Object segmentation based on split and merge algorithm" IEEE TENCON 2008 Region 10 Conference; Faruquzzaman, A. B. M.; Paiker, N. R.; Arafat, J.; Ali, M. A. "Robust object segmentation using split-and-merge" International Journal of Signal and Imaging Systems Engineering, 2009, 2(1), 70</div></div>
+            <div class="cvitem"><div class="item-label">2008</div><div class="item-content">Faruquzzaman, A. B. M.; Paiker, N. R.; Arafat, J.; Ali, M. A.; Sorwar, G. "Literature on image segmentation based on split-and-merge techniques" Proceedings of 5th International Conference on Information Technology and Applications, ICITA 2008, p120-125</div></div>
+            <div class="cvitem"><div class="item-label">2008</div><div class="item-content">Faruquzzaman, A. B. M.; Paiker, N. R.; Arafat, J.; Ali, M. A. "A survey report on image segmentation based on split and merge algorithm" IETECH Journal of Advanced Computations, 2(2), 86-101</div></div>
+            <div class="cvitem"><div class="item-label">Research Impact</div><div class="item-content">NSF-funded CNCF K8s operator security framework (TestPyPI: operatorhub-scraper), Enhanced DCGAN PyPI package deployed globally, 500+ GitHub stars across 20+ repositories, <a href="https://conf.researchr.org/profile/ease-2025/jahidularafat" target="_blank">Program Committee Member EASE 2025</a> (Emerging Results track), production-ready tools serving enterprise and research communities worldwide, 15+ peer-reviewed publications spanning computer vision, cybersecurity, social media analytics, and cloud-native systems</div></div>
+        </section>
+
+        <section id="oss">
+            <h2 class="section-title">Top Git Repositories & Open Source Contributions</h2>
+            <div class="cvitem wide-label"><div class="item-label">CNCF K8s Security</div><div class="item-content"><a href="https://github.com/jahidul-arafat/cncf-k8s-operatorhub-scrapper" target="_blank">Secure Supply Chain for K8s Operator</a> (NSF/CNCF funded), <a href="https://test.pypi.org/project/operatorhub-scraper/" target="_blank">TestPyPI Package</a>, <a href="https://jahidul-arafat.github.io/sample_dep_resolver_output_only/" target="_blank">Live Demo</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Research Tools</div><div class="item-content"><a href="https://github.com/jahidul-arafat/java-ast-dependency-parser-research" target="_blank">Java AST Dependency Parser</a> (NSF funded PhD collaboration)</div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">AI/ML & Computer Vision</div><div class="item-content"><a href="https://github.com/jahidul-arafat/gan-mnist-cifar" target="_blank">Deep Convolutional GAN for Computer Vision + PyPI Package</a>, <a href="https://github.com/jahidul-arafat/optimizing_model_accuracy_with_synthetic_data" target="_blank">Synthetic Data Model Optimization</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">GenAI Architecture</div><div class="item-content"><a href="https://jahidul-arafat.github.io/genai_model_training_architecture/" target="_blank">Model Training Architecture Designs</a>, <a href="https://github.com/jahidul-arafat/aws_genai_architecture" target="_blank">AWS GenAI Source Code</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Industry Collaboration</div><div class="item-content"><a href="https://jahidul-arafat.github.io/epri_ai_architectures/" target="_blank">EPRI USA Distribution Grid Modeler AI Assistance</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Algorithm Visualization</div><div class="item-content"><a href="https://jahidul-arafat.github.io/bellman-ford-visualization/" target="_blank">Bellman-Ford Simulator</a>, <a href="https://jahidul-arafat.github.io/prims_mst_visualization/" target="_blank">Prim's MST Simulator</a>, <a href="https://jahidul-arafat.github.io/aubatch/" target="_blank">Auburn Batch Processing</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Database & Analytics</div><div class="item-content"><a href="https://github.com/jahidul-arafat/UniversalDBProject" target="_blank">Universal Database Explorer with AI</a>, <a href="https://github.com/jahidul-arafat/repo-contributor-analyzer" target="_blank">Repository Contributor Analyzer</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Systems Programming</div><div class="item-content"><a href="https://github.com/jahidul-arafat/RUST_ARCHITECT" target="_blank">Rust Architecture Patterns</a>, <a href="https://github.com/jahidul-arafat/Top-Python-Modules-for-DevOps" target="_blank">Top Python DevOps Modules</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Security & Forensics</div><div class="item-content"><a href="https://github.com/jahidul-arafat/JALPA-log-forensics-Python-Toolkit" target="_blank">JALPA Log Forensics Python Toolkit</a>, <a href="https://github.com/jahidul-arafat/log4j-vulnerability-simulation" target="_blank">Log4j Vulnerability Simulator</a>, <a href="https://github.com/jahidul-arafat/play_with_bash_scripts" target="_blank">Bash Security Scripts</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Oracle IaaC</div><div class="item-content"><a href="https://github.com/jahidul-arafat/oci_dev_and_archi_scratchbook" target="_blank">OCI DevOps Scratchbook</a>, <a href="https://github.com/jahidul-arafat/Oracle-DevOps-with-Ansible-and-Terraform" target="_blank">Oracle DevOps with Ansible & Terraform</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Streaming & Messaging</div><div class="item-content"><a href="https://github.com/jahidul-arafat/mastering-kafka-ksqldb" target="_blank">Mastering Apache Kafka & KSQLDB</a>, <a href="https://github.com/jahidul-arafat/ott_predictor" target="_blank">OTT Bandwidth Predictor</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Enterprise Applications</div><div class="item-content"><a href="https://github.com/jahidul-arafat/2FA_eCommeceApp_with_Oracle_AQ" target="_blank">2FA eCommerce with Oracle AQ</a>, <a href="https://github.com/jahidul-arafat/cucumber_bdd_recipies" target="_blank">BDD Testing with Cucumber Framework</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Infrastructure Automation</div><div class="item-content"><a href="https://github.com/jahidul-arafat/Chef-Automation-Infra-Security-Compliance-Cloud-and-Software-Delivery" target="_blank">Chef Security & Compliance Automation</a>, <a href="https://github.com/jahidul-arafat/kubernetes-operator-playground" target="_blank">Kubernetes Operator Playground</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">Production GenAI</div><div class="item-content"><a href="https://gitlab.com/jza0145/autogen_multiagent_hybrid_datasource" target="_blank">AutoGen Multi-Agent RAG System</a>, <a href="https://gitlab.com/jza0145/podcast_buddy" target="_blank">AI Podcast Buddy</a>, <a href="https://gitlab.com/jza0145/ai-powered-upselling" target="_blank">AI-Powered Upselling System</a></div></div>
+
+            <div class="cvitem wide-label"><div class="item-label">DevSecOps Pipeline</div><div class="item-content"><a href="https://gitlab.com/sec-sw-const-sum-24-b/students/jza0145/final-part-1" target="_blank">CI/CD with SonarQube Integration</a>, <a href="https://gitlab.com/sec-sw-const-sum-24-b/students/jza0145/final-part-b" target="_blank">SAST/DAST & AWS EBS Pipeline</a></div></div>
+        </section>
+
+        <section id="certs">
+            <h2 class="section-title">Certifications & Recognition</h2>
+            <div class="cvitem"><div class="item-label">Cloud Architecture</div><div class="item-content">AWS Solutions Architect Professional (97% - 2nd globally), Oracle Cloud Architect Professional (93.3%), Oracle Cloud Infrastructure Architect Associate, Oracle Cloud Operations Associate, Oracle Developer Associate</div></div>
+            <div class="cvitem"><div class="item-label">Security & Compliance</div><div class="item-content">ISC2 Certified in Cybersecurity (CC), EC-Council CEH v11, IBM Cybersecurity Analyst Professional, SISA PCI-DSS Implementer (CPISI - 86%), Cisco Network Academy Cybersecurity Pathway, Fortinet NSE 1, Oracle Cloud Security Associate</div></div>
+            <div class="cvitem"><div class="item-label">Cloud Specializations</div><div class="item-content">Oracle Autonomous Database Specialist, Oracle Machine Learning Specialist, Oracle Database Migration Specialist, Oracle Application Integration Specialist, AWS Block Storage Specialized, Alibaba Cloud DevOps/ML/Computing Specialty</div></div>
+            <div class="cvitem"><div class="item-label">Development & DevOps</div><div class="item-content">Next.js Full-Stack Development (LinkedIn 2025), Node.js Web Servers & Deployment (LinkedIn 2024), Java Spring Boot Microservices, Advanced Java Programming, Functional Programming with Java, Kubernetes Challenges (KodeKloud), GitOps Foundation (Linux Foundation)</div></div>
+            <div class="cvitem"><div class="item-label">Enterprise & Management</div><div class="item-content">Harvard ManageMentor Coaching Certification, IBM Enterprise Design Thinking (Practitioner & Co-Creator), Agile with Atlassian Jira, Scrum Foundation Professional (SFPC), ISO/IEC 27001 Information Security Associate, ISO/IEC 20000 IT Service Management</div></div>
+            <div class="cvitem"><div class="item-label">DevSecOps & Infrastructure</div><div class="item-content">Chef Principles Certification, RedHat RHCSA, CSI Linux Bash/Python Scripting, OPSWAT Security Associate (Email, Endpoint, Network, Web-Traffic), Adobe Certified Magento Commerce Developer</div></div>
+            <div class="cvitem"><div class="item-label">Current Studies (2025)</div><div class="item-content">Azure Solutions Architect Expert (AZ-305) - In Progress, HuggingFace AI Courses: LLM Course, Model Context Protocol (MCP), AI Agents, Deep Reinforcement Learning, Computer Vision, Audio Transformers, Diffusion Models, ML for Games, ML for 3D</div></div>
+            <div class="cvitem"><div class="item-label">Professional Rankings</div><div class="item-content">TryHackMe Top 4% Global Cybersecurity, HackerRank Python Algorithms (2296.4/2300), AWS SA Professional 2nd Highest Score Worldwide (97%)</div></div>
+            <div class="cvitem"><div class="item-label">Awards & Fellowships</div><div class="item-content">NSF Presidential Graduate Research Fellowship (Top Distinction), Woltosz Graduate Research Fellowship, Oracle Executive Recognition for Critical Security Research</div></div>
+        </section>
+
+    </main>
+</div>
+
+<footer class="cv-footer">
+    <div class="footer-content">
+        <span id="footer-date"></span>
+        <span><a href="https://jahidularafat.github.io/" target="_blank">jahidularafat.github.io</a></span>
+        <span>Page 1</span>
     </div>
 </footer>
 
-<!-- JavaScript Files -->
-<script src="assets/js/data-complete.js"></script>
-<script src="assets/js/components.js"></script>
-<script src="assets/js/animations.js"></script>
-<script src="assets/js/main.js"></script>
+<script>
+    // Set date in footer
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('footer-date').textContent = today.toLocaleDateString('en-US', options);
+
+    // Modal functionality
+    function openModal(modalId) {
+        document.getElementById('modalOverlay').style.display = 'block';
+        document.getElementById(modalId).style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').style.display = 'none';
+        const modals = document.querySelectorAll('.architecture-modal');
+        modals.forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Close modal when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Prevent modal from closing when clicking inside the modal content
+    document.addEventListener('click', function(event) {
+        const modals = document.querySelectorAll('.architecture-modal');
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    });
+</script>
 </body>
 </html>
