@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Debug - Integration Test</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .status { padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+    .success { background: #d1fae5; color: #065f46; }
+    .error { background: #fee2e2; color: #991b1b; }
+    .warning { background: #fef3c7; color: #92400e; }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+    button:hover { background: #1d4ed8; }
+    pre { background: #f3f4f6; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+    .test-section { border: 1px solid #e5e7eb; padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+  </style>
+</head>
+<body>
+<h1>Portfolio Integration Debug</h1>
+<p>This page tests if all modules are loading correctly.</p>
+
+<div class="test-section">
+  <h2>Module Loading Status</h2>
+  <div id="status-container"></div>
+</div>
+
+<div class="test-section">
+  <h2>Quick Tests</h2>
+  <button onclick="testTemplateEngine()">Test Template Engine</button>
+  <button onclick="testDataAccess()">Test Data Access</button>
+  <button onclick="testNavigation()">Test Navigation</button>
+  <button onclick="initializeApp()">Initialize App</button>
+  <div id="test-results"></div>
+</div>
+
+<div class="test-section">
+  <h2>Console Output</h2>
+  <pre id="console-output"></pre>
+</div>
+
+<!-- Load all scripts -->
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/templateEngine.js"></script>
+<script src="assets/js/pageManager.js"></script>
+<script src="assets/js/animationManager.js"></script>
+<script src="assets/js/app.js"></script>
+
+<script>
+  // Capture console logs
+  const originalLog = console.log;
+  const originalError = console.error;
+  const consoleOutput = document.getElementById('console-output');
+
+  function addToConsoleOutput(message, type = 'log') {
+    const timestamp = new Date().toLocaleTimeString();
+    consoleOutput.textContent += `[${timestamp}] ${type.toUpperCase()}: ${message}\n`;
+    consoleOutput.scrollTop = consoleOutput.scrollHeight;
+  }
+
+  console.log = function(...args) {
+    addToConsoleOutput(args.join(' '), 'log');
+    originalLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    addToConsoleOutput(args.join(' '), 'error');
+    originalError.apply(console, args);
+  };
+
+  // Check module loading status
+  function checkModuleStatus() {
+    const statusContainer = document.getElementById('status-container');
+    const modules = [
+      { name: 'CONFIG', obj: window.CONFIG },
+      { name: 'PORTFOLIO_DATA', obj: window.PORTFOLIO_DATA },
+      { name: 'TemplateEngine', obj: window.TemplateEngine },
+      { name: 'PageManager', obj: window.PageManager },
+      { name: 'AnimationManager', obj: window.AnimationManager },
+      { name: 'PortfolioApp', obj: window.PortfolioApp }
+    ];
+
+    statusContainer.innerHTML = '';
+
+    modules.forEach(module => {
+      const status = document.createElement('div');
+      status.className = module.obj ? 'status success' : 'status error';
+      status.textContent = `${module.name}: ${module.obj ? '✅ Loaded' : '❌ Not Found'}`;
+      statusContainer.appendChild(status);
+    });
+  }
+
+  // Test functions
+  function testTemplateEngine() {
+    const results = document.getElementById('test-results');
+    try {
+      if (!window.TemplateEngine) {
+        throw new Error('TemplateEngine not loaded');
+      }
+
+      const engine = new TemplateEngine();
+      const testTemplate = '<h1>{{name}}</h1><p>{{description}}</p>';
+      const testData = { name: 'Test', description: 'This is a test' };
+      const result = engine.compile(testTemplate, testData);
+
+      results.innerHTML = `<div class="status success">✅ Template Engine Test Passed<br><pre>${result}</pre></div>`;
+    } catch (error) {
+      results.innerHTML = `<div class="status error">❌ Template Engine Test Failed: ${error.message}</div>`;
+    }
+  }
+
+  function testDataAccess() {
+    const results = document.getElementById('test-results');
+    try {
+      if (!window.CONFIG || !window.PORTFOLIO_DATA) {
+        throw new Error('Data objects not loaded');
+      }
+
+      const configTest = window.CONFIG.app.name;
+      const dataTest = window.PORTFOLIO_DATA.personal.name;
+
+      results.innerHTML = `<div class="status success">✅ Data Access Test Passed<br>
+                    Config: ${configTest}<br>
+                    Data: ${dataTest}</div>`;
+    } catch (error) {
+      results.innerHTML = `<div class="status error">❌ Data Access Test Failed: ${error.message}</div>`;
+    }
+  }
+
+  function testNavigation() {
+    const results = document.getElementById('test-results');
+    try {
+      if (!window.PageManager || !window.TemplateEngine) {
+        throw new Error('Required classes not loaded');
+      }
+
+      // Create a minimal page container for testing
+      let testContainer = document.getElementById('test-page-container');
+      if (!testContainer) {
+        testContainer = document.createElement('div');
+        testContainer.id = 'test-page-container';
+        document.body.appendChild(testContainer);
+      }
+
+      const engine = new TemplateEngine();
+      // We can't fully test PageManager without proper DOM setup
+      results.innerHTML = `<div class="status success">✅ Navigation Classes Available</div>`;
+    } catch (error) {
+      results.innerHTML = `<div class="status error">❌ Navigation Test Failed: ${error.message}</div>`;
+    }
+  }
+
+  function initializeApp() {
+    const results = document.getElementById('test-results');
+    try {
+      if (!window.PortfolioApp) {
+        throw new Error('PortfolioApp not loaded');
+      }
+
+      // Don't actually initialize on debug page, just test instantiation
+      const app = new PortfolioApp();
+      results.innerHTML = `<div class="status success">✅ PortfolioApp can be instantiated</div>`;
+
+      // Check if initialization would work
+      if (window.CONFIG && window.PORTFOLIO_DATA && window.TemplateEngine &&
+              window.PageManager && window.AnimationManager) {
+        results.innerHTML += `<div class="status success">✅ All dependencies available for initialization</div>`;
+      } else {
+        results.innerHTML += `<div class="status warning">⚠️ Some dependencies missing for full initialization</div>`;
+      }
+
+    } catch (error) {
+      results.innerHTML = `<div class="status error">❌ App Initialization Test Failed: ${error.message}</div>`;
+    }
+  }
+
+  // Run status check on load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      checkModuleStatus();
+      console.log('Debug page loaded, checking module status...');
+    }, 100);
+  });
+
+  // Re-check status every 2 seconds for the first 10 seconds
+  let checkCount = 0;
+  const statusInterval = setInterval(() => {
+    checkCount++;
+    checkModuleStatus();
+    if (checkCount >= 5) {
+      clearInterval(statusInterval);
+      console.log('Finished initial status checks');
+    }
+  }, 2000);
+
+  // Add some helpful debugging functions to window
+  window.debugPortfolio = {
+    checkStatus: checkModuleStatus,
+    testTemplate: testTemplateEngine,
+    testData: testDataAccess,
+    testNav: testNavigation,
+    initApp: initializeApp,
+
+    // Helper to inspect loaded modules
+    inspect: () => {
+      return {
+        CONFIG: window.CONFIG,
+        PORTFOLIO_DATA: window.PORTFOLIO_DATA,
+        classes: {
+          TemplateEngine: window.TemplateEngine,
+          PageManager: window.PageManager,
+          AnimationManager: window.AnimationManager,
+          PortfolioApp: window.PortfolioApp
+        }
+      };
+    },
+
+    // Quick test all
+    testAll: () => {
+      testTemplateEngine();
+      setTimeout(testDataAccess, 500);
+      setTimeout(testNavigation, 1000);
+      setTimeout(initializeApp, 1500);
+    }
+  };
+
+  console.log('Debug utilities available as window.debugPortfolio');
+  console.log('Try: debugPortfolio.testAll() or debugPortfolio.inspect()');
+</script>
+</body>
+</html>

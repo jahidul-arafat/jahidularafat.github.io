@@ -1,0 +1,297 @@
+# ==========================================================================
+# Git Ignore Configuration for Portfolio Website
+# ==========================================================================
+
+# Operating System Files
+# ==========================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Editor and IDE Files
+# ==========================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Development and Build Files
+# ==========================================================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.pnp
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
+
+# Environment and Configuration Files
+# ==========================================================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Local configuration
+config.local.js
+config.local.json
+local.properties
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs and Temporary Files
+# ==========================================================================
+
+# Log files
+*.log
+logs/
+*.log.*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+dist/
+.cache
+
+# Testing and Coverage
+# ==========================================================================
+
+# Testing
+.nyc_output
+.coverage
+.coverage.*
+.pytest_cache/
+.rspec
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
+
+# Jest
+coverage/
+*.lcov
+.nyc_output
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Deployment and CI/CD
+# ==========================================================================
+
+# Deployment
+.vercel
+.netlify
+.now
+
+# GitHub Actions
+.github/workflows/secrets/
+
+# CircleCI
+.circleci/
+
+# Travis CI
+.travis.yml
+
+# Heroku
+.heroku/
+
+# AWS
+.aws/
+.elasticbeanstalk/
+
+# Security and Sensitive Files
+# ==========================================================================
+
+# API keys and secrets
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+secrets.json
+credentials.json
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# GPG keys
+*.gpg
+*.asc
+
+# Backup Files
+# ==========================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*.swo
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Project Specific Exclusions
+# ==========================================================================
+
+# Portfolio specific - uncomment if needed
+# drafts/
+# archive/
+# old-versions/
+# personal-notes/
+
+# Large media files that shouldn't be in git
+# *.mov
+# *.mp4
+# *.avi
+# *.wmv
+# *.flv
+# *.webm
+
+# High-resolution images (if you want to exclude them)
+# *.psd
+# *.ai
+# *.sketch
+
+# Include Important Files
+# ==========================================================================
+
+# Force include important files that might be ignored
+!.gitkeep
+!.htaccess
+!README.md
+!LICENSE
+
+# Development Documentation
+# ==========================================================================
+
+# Documentation that should not be public
+# dev-notes.md
+# todo.md
+# internal-docs/
+
+# ==========================================================================
+# End of .gitignore
+# ==========================================================================
