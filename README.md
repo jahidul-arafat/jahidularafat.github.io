@@ -119,7 +119,7 @@ this.resumeURL = 'assets/files/your-resume.pdf';
 - ✅ Edge 90+
 - ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🤝 **Contributings**
+## 🤝 **Contributions**
 
 This is a personal portfolio, but suggestions and improvements are welcome:
 
